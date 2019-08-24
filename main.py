@@ -45,6 +45,7 @@ def connect_to_wifi(request):
 				ssid = wifi.replace(" ","").replace("+", " ")
 				with open("config","w+") as file:
 					file.write(ssid)
+				print("reset")
 				reset.value(0)
 	
 	else: 
@@ -52,7 +53,7 @@ def connect_to_wifi(request):
 
 while True:
   	try:
-	    prime_conn, prime_addr = prim_socket.accept()
+	    prime_conn, prime_addr = prime_socket.accept()
 	    print('Got a connection from %s' % str(prime_addr))
 	    request = str(prime_conn.recv(1024))
 	    response = connect_to_wifi(request)
