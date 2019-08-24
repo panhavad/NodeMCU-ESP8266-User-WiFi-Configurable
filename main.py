@@ -63,4 +63,4 @@ while True:
 	    prime_conn.sendall(response)
 	    prime_conn.close()
 	except Exception as e:
-		pass
+		pass#continue to the next loop
